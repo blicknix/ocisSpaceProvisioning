@@ -70,23 +70,21 @@ def spaceProvisioning():
                     if settings.script_debug:
                         print("Space created with id: " + r.json()['id'])
                     space_id = r.json()['id']
-                url = "{0}graph/v1.0/users?%24search={1}".format(settings.ocis_url, row[settings.user_name_field])
-                r = requests.get(url, headers=headersAPI)
+                #url = "{0}graph/v1.0/users?%24search={1}".format(settings.ocis_url, row[settings.user_name_field])
+                #r = requests.get(url, headers=headersAPI)
 
                 if row[settings.user_role_field] == settings.manager_string:
-                    role_id = settings.space_manager_id
+                    role_id = "manager"
                 elif row[settings.user_role_field] == settings.editor_string:
-                    role_id = settings.space_editor_id
+                    role_id = "editor"
                 else:
-                    role_id = settings.space_viewer_id
+                    role_id = "viewer"
                 if settings.script_debug:
                     print(r.json()['value'][0]['id'] + ' needs ' + role_id )
                 
                 space_id = space_id.replace("$","%24")
-                url = "{0}graphgraph/v1.0/drives/{1}".format(settings.ocis_url, space_id)
-                #insert = {"recipients": [{"@libre.graph.recipient.type": "user","objectId": r.json()['value'][0]['id']}],"roles": [role_id]}
-                insert = {"root": {"permissions": [{"grantedToIdentities": [{"user": {"id": r.json()['value'][0]['id'] }}],"roles": ["manager"]}]}}
-                r = requests.patch(url, headers=headersAPI, json=insert)
+                url = "{0}ocs/v1.php/apps/files_sharing/api/v1/shares?shareType=7&shareWith={1}&space_ref={2}&permissions=1&role={3}".format(settings.ocis_url, row[settings.user_name_field], space_id, role_id)
+                r = requests.post(url, headers=headersAPI)
             else:
                 if settings.script_debug:
                     print(r.status_code)
