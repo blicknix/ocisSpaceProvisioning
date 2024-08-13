@@ -1,0 +1,15 @@
+Space;Beschreibung;User;Rolle;
+Mercury;Small, hot, no atmosphere;jwalker;Manager;
+Mercury;Small, hot, no atmosphere;walker;Writing;
+Mercury;Small, hot, no atmosphere;klewis;Murks;
+Mercury;Small, hot, no atmosphere;erampling;Reading;
+Venus;Dense atmosphere, extremely hot;walker;Manager;
+Earth;Life, water, habitable zone;klewis;Manager;
+Mars;Red planet, possible terraforming candidate;erampling;Manager;
+Jupiter;Gas giant, largest planet;jwalker;Manager;
+Saturn;Ring system, gas giant, many moons;walker;Manager;
+Uranus;Ice giant, tilted axis, methane;klewis;Manager;
+Neptune;Stormy, cold ice giant, dark;erampling;Manager;
+Pluto;Dwarf planet, icy, Kuiper belt;jwalker;Manager;
+Sunny Space; Not a Star;walker;Manager;
+Sun;Star, energy source, nuclear fusion;klewis;Manager;

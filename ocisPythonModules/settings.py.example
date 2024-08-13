@@ -1,0 +1,37 @@
+#### General ####
+script_debug = False
+
+#### URLs ####
+#User with at least Space Admin rights
+space_admin_user =""
+#Will ask for the Password of the user
+
+#API Endpoint OCIS
+ocis_url = ''
+
+#Config Keycloak
+keycloak_url = ""
+keycloak_realm = ""
+keycloak_client_id = ""
+keycloak_client_secret = ""
+
+#### csv ####
+csv_file = "example.csv"
+
+### csv field names
+#Name of new space
+space_name_field = "Space"
+#space description in ocis
+space_description_field = "Beschreibung"
+#Username in ocis
+user_name_field = "User"
+#role for the user in space
+user_role_field = "Rolle"
+
+### csv role mapping
+#Manager string
+manager_string = "Manager"
+#Editor string
+editor_string = "Writing"
+#Viewer string
+viewer_string = "Reading"
